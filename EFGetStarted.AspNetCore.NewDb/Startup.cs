@@ -42,30 +42,29 @@ namespace EFGetStarted.AspNetCore.NewDb
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
            
-               if (env.IsDevelopment())
-            {
+            //    if (env.IsDevelopment())
+            // {
                 
-                app.UseBrowserLink();
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-            }
+            //     app.UseBrowserLink();
+            //     app.UseDeveloperExceptionPage();
+            // }
+            // else
+            // {
+            //     app.UseExceptionHandler("/Home/Error");
+            // }
 
             
-            app.UseDefaultFiles(); // will BY DEFAULT DISPLAY THE HTML PAGE
-            app.UseStaticFiles(); // will display static files if appointed to
-            app.UseFileServer(); //default files and static files in correct order using System;
-            app.UseDirectoryBrowser(); // browse directory'
-            
-
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
-            });
+        //    app.UseDefaultFiles(); // will BY DEFAULT DISPLAY THE HTML PAGE
+      //    app.UseStaticFiles(); // will display static files if appointed to
+         //  app.UseFileServer(); //default files and static files in correct order using System;
+        //    app.UseDirectoryBrowser(); // browse directory'            
+            app.UseMvcWithDefaultRoute();
+            // app.UseMvc(routes =>
+            // {
+            //     routes.MapRoute(
+            //         name: "default",
+            //         template: "{controller=Home}/{action=Index}/{id?}");
+            // });
 
            
         

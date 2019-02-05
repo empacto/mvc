@@ -10,10 +10,15 @@ namespace EFGetStarted.AspNetCore.NewDb.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+
+        public string Index()
         {
-            return View();
+            return "this is  a test";
         }
+        // public IActionResult Index()
+        // {
+        //     return View();
+        // }
 
         public IActionResult About()
         {
