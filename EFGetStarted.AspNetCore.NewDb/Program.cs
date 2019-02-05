@@ -22,4 +22,7 @@ namespace EFGetStarted.AspNetCore.NewDb
                 .UseStartup<Startup>()
                 .Build();
     }
+
+
+    
 }
