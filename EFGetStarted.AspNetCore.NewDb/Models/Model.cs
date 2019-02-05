@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace EFGetStarted.AspNetCore.NewDb.Models
 {
    
-
+//ook dit is gewijzigd.. zou nu toch moeten voorkomen
     public class Post
     {
         public int PostId { get; set; }
