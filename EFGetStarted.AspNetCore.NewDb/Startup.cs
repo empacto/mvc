@@ -16,7 +16,11 @@ namespace EFGetStarted.AspNetCore.NewDb
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            var builder = new ConfigurationBuilder().AddJsonFile("apptest.json");
+           
+            
         }
+        public IConfiguration configuration2{ get; set; }
 
         public IConfiguration Configuration { get; }
 
@@ -37,8 +41,10 @@ namespace EFGetStarted.AspNetCore.NewDb
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+           
                if (env.IsDevelopment())
             {
+                
                 app.UseBrowserLink();
                 app.UseDeveloperExceptionPage();
             }
@@ -47,7 +53,12 @@ namespace EFGetStarted.AspNetCore.NewDb
                 app.UseExceptionHandler("/Home/Error");
             }
 
-            app.UseStaticFiles();
+            
+            app.UseDefaultFiles(); // will BY DEFAULT DISPLAY THE HTML PAGE
+            app.UseStaticFiles(); // will display static files if appointed to
+            app.UseFileServer(); //default files and static files in correct order using System;
+            app.UseDirectoryBrowser(); // browse directory'
+            
 
             app.UseMvc(routes =>
             {
@@ -55,6 +66,9 @@ namespace EFGetStarted.AspNetCore.NewDb
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+           
+        
         }
     }
 }
