@@ -19,6 +19,13 @@ namespace EFGetStarted.AspNetCore.NewDb.Controllers
 
             return new ObjectResult(model);
         }
+
+        public ViewResult MyRestaurant()
+        {
+            var model = new Restaurant{Id=2,Name="Meatery"};
+
+            return View(model);
+        }
         
     }
 }
