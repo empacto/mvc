@@ -30,6 +30,8 @@ namespace EFGetStarted.AspNetCore.NewDb
             
               services.AddDbContext<BloggingContext>(options =>
         options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+        services.AddRouting();
             
             services.AddMvc();
         }
@@ -55,16 +57,18 @@ namespace EFGetStarted.AspNetCore.NewDb
 
             
         //    app.UseDefaultFiles(); // will BY DEFAULT DISPLAY THE HTML PAGE
-      //    app.UseStaticFiles(); // will display static files if appointed to
+          app.UseStaticFiles(); // will display static files if appointed to
          //  app.UseFileServer(); //default files and static files in correct order using System;
         //    app.UseDirectoryBrowser(); // browse directory'            
-            app.UseMvcWithDefaultRoute();
-            // app.UseMvc(routes =>
-            // {
-            //     routes.MapRoute(
-            //         name: "default",
-            //         template: "{controller=Home}/{action=Index}/{id?}");
-            // });
+           // app.UseMvcWithDefaultRoute();
+            app.UseMvc(routes =>
+            {
+                //convention based routing
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+                    //{}=> parameters ? =>optional
+            });
 
            
         
