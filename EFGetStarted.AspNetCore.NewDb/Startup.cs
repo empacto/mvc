@@ -8,6 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using EFGetStarted.AspNetCore.NewDb.Data;
+using EFGetStarted.AspNetCore.NewDb.Services;
+
 
 namespace EFGetStarted.AspNetCore.NewDb
 {
@@ -28,6 +30,11 @@ namespace EFGetStarted.AspNetCore.NewDb
         options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             
             services.AddMvc();
+            services.AddScoped<IRestaurantData,InMemoryRestaurantData>();
+            services.AddScoped<IFactoryData,InMemoryFactoryData>();
+            services.AddScoped<ICar,InMemoryCarData>();
+            services.AddScoped<IShop,InMemoryShopData>();
+            
         }
 
 

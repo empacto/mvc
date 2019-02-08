@@ -1,0 +1,23 @@
+@model IEnumerable<EFGetStarted.AspNetCore.NewDb.Models.Factory>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+
+    <table>
+        @foreach (var factory in Model){
+       <tr>
+           <td> @factory.Id </td>
+           <td> @factory.Name </td>
+           <td></td>
+       </tr>
+        }
+    </table>
+   
+</head>
+<body>
+    
+</body>
+</html>

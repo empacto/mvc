@@ -5,14 +5,27 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using EFGetStarted.AspNetCore.NewDb.Models;
+using EFGetStarted.AspNetCore.NewDb.Services;
 
 namespace EFGetStarted.AspNetCore.NewDb.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private IRestaurantData _restaurantData;
+
+        public HomeController(IRestaurantData ir)
         {
-            return View();
+            _restaurantData = ir;
+           
+            
+        }
+
+        public ViewResult Index()
+        {
+           var model =  _restaurantData.GetAll();
+            return View(model);
+
+           
         }
 
         public IActionResult About()
