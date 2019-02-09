@@ -1,15 +1,14 @@
-﻿@model IEnumerable<EFGetStarted.AspNetCore.NewDb.Models.Restaurant>
-
+﻿@model EFGetStarted.AspNetCore.NewDb.ViewModels.HomePageViewModel
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
- 
 </head>
+ <title>@Model.CurrentGreeting</title>
 <body>
    <table>
-       @foreach (var restaurant in Model){
+       @foreach (var restaurant in Model.Restaurants){
         <tr>
             <td>@restaurant.Id </td>
         

@@ -1,4 +1,4 @@
-using EFGetStarted.AspNetCore.NewDb.Models;
+using EFGetStarted.AspNetCore.NewDb.Entities;
 using System.Collections.Generic;
 
 namespace EFGetStarted.AspNetCore.NewDb.Services

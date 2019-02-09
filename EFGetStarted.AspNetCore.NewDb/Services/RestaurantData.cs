@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using EFGetStarted.AspNetCore.NewDb.Models;
+using EFGetStarted.AspNetCore.NewDb.Entities;
 
 
 namespace EFGetStarted.AspNetCore.NewDb.Services
