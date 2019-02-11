@@ -7,6 +7,8 @@ namespace EFGetStarted.AspNetCore.NewDb.Services
     {
 
         IEnumerable<Restaurant> GetAll();
+        Restaurant Get(int id);
+
          
     }
 }

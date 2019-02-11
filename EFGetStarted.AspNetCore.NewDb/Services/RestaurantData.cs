@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using EFGetStarted.AspNetCore.NewDb.Entities;
+using System.Linq;
 
 
 namespace EFGetStarted.AspNetCore.NewDb.Services
@@ -24,6 +25,12 @@ namespace EFGetStarted.AspNetCore.NewDb.Services
         public IEnumerable<Restaurant>GetAll()
         {
             return _restaurants;
+        }
+
+        public Restaurant Get(int id)
+        {
+            return _restaurants.FirstOrDefault(r => r.Id == id);
+
         }
 
         List<Restaurant> _restaurants;

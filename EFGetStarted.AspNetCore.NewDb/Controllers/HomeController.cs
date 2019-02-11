@@ -32,6 +32,21 @@ namespace EFGetStarted.AspNetCore.NewDb.Controllers
            
         }
 
+        public IActionResult Details(int id)
+        {
+              var model = _restaurantData.Get(id);
+             if(model == null)
+             {
+              return RedirectToAction("Index");
+             
+
+             }
+             
+                return View(model);                
+             
+
+        }
+
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
