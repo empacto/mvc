@@ -57,7 +57,7 @@ namespace EFGetStarted.AspNetCore.NewDb.Controllers
             var restaurant = new Restaurant();
             restaurant.Name = model.Name;
             restaurant.Cuisine = model.Cuisine;
-            _restaurantData.
+            _restaurantData.Add(restaurant);
             return View();
         }
 
