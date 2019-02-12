@@ -52,13 +52,13 @@ namespace EFGetStarted.AspNetCore.NewDb.Controllers
             return View();
         }
         [HttpPost]
-        public ViewResult Create(RestaurantEditViewModel model)
+        public IActionResult Create(RestaurantEditViewModel model)
         {
             var restaurant = new Restaurant();
             restaurant.Name = model.Name;
             restaurant.Cuisine = model.Cuisine;
-            _restaurantData.Add(restaurant);
-            return View();
+            _restaurantData.Add(restaurant);         
+            return RedirectToAction("Details",new {id = restaurant.Id});
         }
 
         public IActionResult About()
