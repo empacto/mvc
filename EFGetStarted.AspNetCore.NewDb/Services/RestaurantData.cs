@@ -8,7 +8,7 @@ namespace EFGetStarted.AspNetCore.NewDb.Services
     public class InMemoryRestaurantData : IRestaurantData
     {
         
-        public InMemoryRestaurantData()
+        static InMemoryRestaurantData()
         {
 
             _restaurants = new List<Restaurant>
@@ -33,7 +33,17 @@ namespace EFGetStarted.AspNetCore.NewDb.Services
 
         }
 
-        List<Restaurant> _restaurants;
+        public void Add(Restaurant newRestaurant)
+        {
+            //use linqquery get maximumid. using System;
+            
+           newRestaurant.Id = _restaurants.Max(r => r.Id) + 1 ; // find the max id increment
+           _restaurants.Add(newRestaurant); // save newRestaurant id + received data into collection 
+
+
+        }
+
+       static List<Restaurant> _restaurants;
 
 
     }

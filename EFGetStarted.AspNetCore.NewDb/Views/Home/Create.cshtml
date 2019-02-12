@@ -1,0 +1,30 @@
+﻿@using EFGetStarted.AspNetCore.NewDb.Entities
+@model EFGetStarted.AspNetCore.NewDb.Entities.Restaurant
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+ <title>Create</title>
+<body>
+   
+<h3>Create</h3>
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.LabelFor(m=> m.Name)
+        @Html.TextBoxFor(m=> m.Name)
+    </div>
+    <div>
+        @Html.LabelFor(m=> m.Cuisine)
+        @Html.DropDownListFor(m=> m.Cuisine,Html.GetEnumSelectList(typeof(CuisineType)))
+    </div>
+    <div>
+      <input  type="submit" value="Save">
+    </div>
+}
+    
+    
+</body>
+</html>

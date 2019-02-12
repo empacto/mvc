@@ -46,6 +46,20 @@ namespace EFGetStarted.AspNetCore.NewDb.Controllers
              
 
         }
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ViewResult Create(RestaurantEditViewModel model)
+        {
+            var restaurant = new Restaurant();
+            restaurant.Name = model.Name;
+            restaurant.Cuisine = model.Cuisine;
+            _restaurantData.
+            return View();
+        }
 
         public IActionResult About()
         {
