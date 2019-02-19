@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using EFGetStarted.AspNetCore.NewDb.Data;
 using EFGetStarted.AspNetCore.NewDb.Services;
+using Microsoft.Extensions.Logging;
 
 
 namespace EFGetStarted.AspNetCore.NewDb
@@ -28,6 +29,10 @@ namespace EFGetStarted.AspNetCore.NewDb
             
               services.AddDbContext<BloggingContext>(options =>
         options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+         services.AddDbContext<OdeToFoodDBContext>(options =>
+        options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            
             
             services.AddMvc();
             services.AddScoped<IRestaurantData,InMemoryRestaurantData>();

@@ -51,6 +51,26 @@ namespace EFGetStarted.AspNetCore.NewDb.Controllers
         {
             return View();
         }
+        [HttpGet]
+         public IActionResult Edit(int id)
+        {
+            var model = _restaurantData.Get(id);
+            if(model==null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(int id,RestaurantEditViewModel input)
+        {
+                var restaurant = _restaurantData.Get(id);
+                return View(restaurant);
+                
+        }
+
         [HttpPost]
         public IActionResult Create(RestaurantEditViewModel model)
         {
